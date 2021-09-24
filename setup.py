@@ -10,11 +10,12 @@ setup(
     packages=['bytesep'],
     include_package_data=True,
     install_requires=[
-        'torch==1.7.1',
+        'torch',
+        'torchtext',
+        'pytorch_lightning',
         'librosa==0.8.0',  # specify the version!
         'museval==0.4.0',
         'h5py==2.10.0',
-        'pytorch_lightning==1.2.1',
         'numpy==1.18.5',
         'torchlibrosa==0.0.9',
         'matplotlib==3.3.4',

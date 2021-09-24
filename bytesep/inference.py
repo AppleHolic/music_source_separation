@@ -273,7 +273,7 @@ class SeparatorWrapper:
 
         elif source_type == "accompaniment":
             checkpoint_bare_name = (
-                "resunet143_subbtandtime_accompaniment_16.4dB_350k_steps.pth"
+                "resunet143_subbtandtime_accompaniment_16.4dB_350k_steps"
             )
 
         else:
@@ -295,7 +295,7 @@ class SeparatorWrapper:
 
             zenodo_dir = "https://zenodo.org/record/5507029/files"
             zenodo_path = os.path.join(
-                zenodo_dir, "{}?download=1".format(checkpoint_bare_name)
+                zenodo_dir, "{}.pth?download=1".format(checkpoint_bare_name)
             )
 
             os.system('wget -O "{}" "{}"'.format(checkpoint_path, zenodo_path))
