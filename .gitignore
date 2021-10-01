@@ -8,3 +8,4 @@ __pycache__
 .tox
 .pytest_cache
 .idea
+*.egg-info

@@ -1,3 +1,4 @@
+import os
 import argparse
 import time
 
@@ -38,7 +39,8 @@ def separate(args):
     sep_time = time.time() - t1
 
     # Write out audio
-    sep_audio_path = 'sep_{}.wav'.format(source_type)
+    # sep_audio_path = 'sep_{}.wav'.format(source_type)
+    sep_audio_path = args.out_path
 
     soundfile.write(file=sep_audio_path, data=sep_wav.T, samplerate=sample_rate)
 
@@ -55,6 +57,12 @@ if __name__ == '__main__':
         help="Audio path",
     )
     parser.add_argument(
+        '--out_path',
+        type=str,
+        default='pred_audio.wav'
+    )
+
+    parser.add_argument(
         '--source_type',
         type=str,
         choices=['vocals', 'accompaniment'],
@@ -63,5 +71,9 @@ if __name__ == '__main__':
     )
 
     args = parser.parse_args()
+    if os.path.exists(args.out_path):
+        import sys
+        print('Already processed!')
+        sys.exit(0)
 
     separate(args)

@@ -1,0 +1,12 @@
+torch
+torchtext
+pytorch_lightning
+h5py==2.10.0
+librosa==0.8.1
+numpy==1.20.3
+numba==0.54.0
+musdb==0.4.0
+torchlibrosa==0.0.9
+matplotlib==3.3.4
+museval==0.4.0
+inplace-abn==1.1.0
